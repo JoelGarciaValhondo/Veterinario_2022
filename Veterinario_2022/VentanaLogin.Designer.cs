@@ -35,6 +35,8 @@
             this.password = new System.Windows.Forms.Label();
             this.login = new System.Windows.Forms.Button();
             this.textoInicioSesion = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textoApellidoUsuario = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nombreUsuario
@@ -42,24 +44,24 @@
             this.nombreUsuario.BackColor = System.Drawing.Color.Transparent;
             this.nombreUsuario.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreUsuario.ForeColor = System.Drawing.Color.Black;
-            this.nombreUsuario.Location = new System.Drawing.Point(63, 132);
+            this.nombreUsuario.Location = new System.Drawing.Point(62, 110);
             this.nombreUsuario.Name = "nombreUsuario";
             this.nombreUsuario.Size = new System.Drawing.Size(163, 23);
             this.nombreUsuario.TabIndex = 0;
-            this.nombreUsuario.Text = "Nombre de Usuario:";
+            this.nombreUsuario.Text = "Nombre:";
             this.nombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.nombreUsuario.Click += new System.EventHandler(this.nombreUsuario_Click);
             // 
             // textoNombreUsuario
             // 
-            this.textoNombreUsuario.Location = new System.Drawing.Point(66, 170);
+            this.textoNombreUsuario.Location = new System.Drawing.Point(66, 149);
             this.textoNombreUsuario.Name = "textoNombreUsuario";
             this.textoNombreUsuario.Size = new System.Drawing.Size(163, 20);
             this.textoNombreUsuario.TabIndex = 1;
             // 
             // textoPassword
             // 
-            this.textoPassword.Location = new System.Drawing.Point(66, 275);
+            this.textoPassword.Location = new System.Drawing.Point(66, 290);
             this.textoPassword.Name = "textoPassword";
             this.textoPassword.Size = new System.Drawing.Size(163, 20);
             this.textoPassword.TabIndex = 3;
@@ -68,7 +70,7 @@
             // 
             this.password.BackColor = System.Drawing.Color.Transparent;
             this.password.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password.Location = new System.Drawing.Point(66, 235);
+            this.password.Location = new System.Drawing.Point(66, 251);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(163, 23);
             this.password.TabIndex = 2;
@@ -99,6 +101,25 @@
             this.textoInicioSesion.Text = "Inicio de Sesión";
             this.textoInicioSesion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(66, 218);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(163, 20);
+            this.textBox1.TabIndex = 7;
+            // 
+            // textoApellidoUsuario
+            // 
+            this.textoApellidoUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.textoApellidoUsuario.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoApellidoUsuario.ForeColor = System.Drawing.Color.Black;
+            this.textoApellidoUsuario.Location = new System.Drawing.Point(66, 182);
+            this.textoApellidoUsuario.Name = "textoApellidoUsuario";
+            this.textoApellidoUsuario.Size = new System.Drawing.Size(163, 23);
+            this.textoApellidoUsuario.TabIndex = 6;
+            this.textoApellidoUsuario.Text = "Apellido:";
+            this.textoApellidoUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // VentanaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,6 +127,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(373, 448);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textoApellidoUsuario);
             this.Controls.Add(this.textoInicioSesion);
             this.Controls.Add(this.login);
             this.Controls.Add(this.textoPassword);
@@ -130,5 +153,7 @@
         private System.Windows.Forms.Label password;
         private System.Windows.Forms.Button login;
         private System.Windows.Forms.Label textoInicioSesion;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label textoApellidoUsuario;
     }
 }

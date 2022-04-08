@@ -16,12 +16,12 @@ namespace Veterinario_2022
             conexion = new MySqlConnection("Server = 127.0.0.1; DataBase = usuariosveterinario; Uid = root; Pwd =; Port = 3306;");
         }
 
-        public DataTable getUsuarioYPass(String usuario, String password)
+        public DataTable getUsuarioYPass(String nombre, String apellido, String password)
         {
             try
             {
                 conexion.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM info_usuarios WHERE usuario = '" + usuario + "', password = '" + password + "'", conexion);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM info_usuario WHERE Nombre = '" + nombre + "' AND Apellido = '" + apellido + "' AND password = '" + password + "'", conexion);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 DataTable info_usuarios = new DataTable();
                 info_usuarios.Load(resultado);

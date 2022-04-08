@@ -14,7 +14,8 @@ namespace Veterinario_2022
     {
         Conexion miConexion = new Conexion();
         DataTable miInfoUsuario = new DataTable();
-        String usuario = "";
+        String nombre = "";
+        String apellido = "";
         String pass = "";
         public VentanaLogin()
         {
@@ -28,9 +29,10 @@ namespace Veterinario_2022
 
         private void login_Click(object sender, EventArgs e)
         {
-            usuario = textoNombreUsuario.Text;
+            nombre = textoNombreUsuario.Text;
+            apellido = textoApellidoUsuario.Text;
             pass = password.Text;
-            miInfoUsuario = miConexion.getUsuarioYPass(usuario, pass);
+            miInfoUsuario = miConexion.getUsuarioYPass(nombre, apellido, pass);
             VentanaPrincipal princ = new VentanaPrincipal(miInfoUsuario);
             princ.Show();
         }
