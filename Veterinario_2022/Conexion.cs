@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,25 @@ namespace Veterinario_2022
         public MySqlConnection conexion;
         public Conexion()
         {
-            conexion = new MySqlConnection("Server = 127.0.0.1; DataBase = ; Uid = root; Pwd =; Port = 3306;");
+            conexion = new MySqlConnection("Server = 127.0.0.1; DataBase = usuariosveterinario; Uid = root; Pwd =; Port = 3306;");
+        }
+
+        public DataTable getUsuarioYPass(String usuario, String password)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM info_usuarios WHERE usuario = '" + usuario + "', password = '" + password + "'", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable info_usuarios = new DataTable();
+                info_usuarios.Load(resultado);
+                conexion.Close();
+                return info_usuarios;
+            }
+            catch(MySqlException e)
+            {
+                throw e;
+            }
         }
     }
 }

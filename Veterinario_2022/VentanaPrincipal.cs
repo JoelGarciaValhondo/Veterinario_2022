@@ -12,10 +12,13 @@ namespace Veterinario_2022
 {
     public partial class VentanaPrincipal : Form
     {
-        public VentanaPrincipal()
+        public VentanaPrincipal(DataTable miInfoUsuario)
         {
             InitializeComponent();
+            
         }
+
+       
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
