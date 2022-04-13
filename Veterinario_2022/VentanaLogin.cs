@@ -13,7 +13,6 @@ namespace Veterinario_2022
     public partial class VentanaLogin : Form
     {
         Conexion miConexion = new Conexion();
-        DataTable miInfoUsuario = new DataTable();
         public VentanaLogin()
         {
             InitializeComponent();
@@ -26,15 +25,17 @@ namespace Veterinario_2022
 
         private void login_Click(object sender, EventArgs e)
         {
+            //SI ESTO ES VERDADERO Y COINCIDE, QUE TE OCULTE EL LOGIN Y TE ABRA LA VENTANA PRINCIPAL Y, SI NO, MSG ERROR
             if(miConexion.getUsuarioYPass(textoNombreUsuario.Text, textoApellidoUsuario.Text, textoPassword.Text))
             {
                 this.Hide();
-                VentanaPrincipal princ = new VentanaPrincipal(miInfoUsuario);
+                VentanaPrincipal princ = new VentanaPrincipal();
                 princ.Show();
             }
             else
             {
                 MessageBox.Show("usuario/contraseña incorrectos");
+
             }  
         }
 
