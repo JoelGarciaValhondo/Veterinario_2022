@@ -14,10 +14,6 @@ namespace Veterinario_2022
     {
         Conexion miConexion = new Conexion();
         DataTable miInfoUsuario = new DataTable();
-        String nombre = "";
-        String apellido = "";
-        String pass = "";
-        int idActual = 1;
         public VentanaLogin()
         {
             InitializeComponent();
@@ -30,17 +26,16 @@ namespace Veterinario_2022
 
         private void login_Click(object sender, EventArgs e)
         {
-            nombre = textoNombreUsuario.Text;
-            apellido = textoApellidoUsuario.Text;
-            pass = password.Text;
-            miInfoUsuario = miConexion.getUsuarioYPass(idActual);
-            while (miInfoUsuario.Rows[0]["Nombre"].ToString() != nombre || miInfoUsuario.Rows[0]["Apellido"].ToString() != apellido || miInfoUsuario.Rows[0]["password"].ToString() != pass)
+            if(miConexion.getUsuarioYPass(textoNombreUsuario.Text, textoApellidoUsuario.Text, textoPassword.Text))
             {
-                idActual++;
-                miInfoUsuario = miConexion.getUsuarioYPass(idActual);
+                this.Hide();
+                VentanaPrincipal princ = new VentanaPrincipal(miInfoUsuario);
+                princ.Show();
             }
-            VentanaPrincipal princ = new VentanaPrincipal(miInfoUsuario);
-            princ.Show();
+            else
+            {
+                MessageBox.Show("usuario/contraseña incorrectos");
+            }  
         }
 
     }
