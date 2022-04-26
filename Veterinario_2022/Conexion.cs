@@ -68,5 +68,28 @@ namespace Veterinario_2022
                 return "error";
             }
         }
+
+        public String insertaMascota(String animal, String nombre, String color)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("INSERT INTO mascotas (Animal, Nombre, Color) VALUES (@Animal, @Nombre, @Color)", conexion);
+                consulta.Parameters.AddWithValue("@Animal", animal);
+                consulta.Parameters.AddWithValue("@Nombre", nombre);
+                consulta.Parameters.AddWithValue("@Color", color);
+
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return "ok";
+            }
+            catch (MySqlException e)
+            {
+                return "error";
+            }
+        }
+
+
     }
 }

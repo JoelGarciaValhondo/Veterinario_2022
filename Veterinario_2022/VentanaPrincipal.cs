@@ -39,5 +39,15 @@ namespace Veterinario_2022
         {
 
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            miConexion.insertaMascota(tipoMascota.Text, nombreMascota.Text, colorMascota.Text);
+        }
     }
 }
