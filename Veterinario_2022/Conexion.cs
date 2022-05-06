@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace Veterinario_2022
 {
@@ -51,7 +52,7 @@ namespace Veterinario_2022
             try
             {
                 conexion.Open();
-                MySqlCommand consulta = new MySqlCommand("INSERT INTO info_usuario (id, DNI, Nombre, Apellido, password, email) VALUES (NULL, @DNI, @Nombre, @Apellido, @password, @email)", conexion);
+                MySqlCommand consulta = new MySqlCommand ("INSERT INTO info_usuario (id, DNI, Nombre, Apellido, password, email) VALUES (NULL, @DNI, @Nombre, @Apellido, @password, @email)", conexion);
                 consulta.Parameters.AddWithValue("@DNI", DNI);
                 consulta.Parameters.AddWithValue("@Nombre", nombre);
                 consulta.Parameters.AddWithValue("@Apellido", apellido);
@@ -61,10 +62,12 @@ namespace Veterinario_2022
                 consulta.ExecuteNonQuery();
 
                 conexion.Close();
+                MessageBox.Show("Usuario Añadido");
                 return "ok";
             }
             catch(MySqlException e)
             {
+                 MessageBox.Show("error");
                 return "error";
             }
         }
@@ -90,6 +93,53 @@ namespace Veterinario_2022
             }
         }
 
+        public DataTable buscaUsuario(String nombre)
+        {
+            conexion.Open();
+            MySqlCommand consulta = new MySqlCommand("SELECT DNI, Nombre, Apellido, email FROM info_usuario WHERE Nombre = @nombre", conexion);
+            consulta.Parameters.AddWithValue("@nombre", nombre);
+            MySqlDataReader resultado = consulta.ExecuteReader();
+            DataTable usuario = new DataTable();
+            usuario.Load(resultado);
+            conexion.Close();
+            return usuario;
+        }
+
+        public DataTable buscaMascotaPorNombre(String nombre)
+        {
+            conexion.Open();
+            MySqlCommand consulta = new MySqlCommand("SELECT Animal, Nombre, Color FROM mascotas WHERE Nombre = @nombre", conexion);
+            consulta.Parameters.AddWithValue("@nombre", nombre);
+            MySqlDataReader resultado = consulta.ExecuteReader();
+            DataTable mascotas = new DataTable();
+            mascotas.Load(resultado);
+            conexion.Close();
+            return mascotas;
+        }
+
+        public DataTable buscaMascotaPorAnimal(String animal)
+        {
+            conexion.Open();
+            MySqlCommand consulta = new MySqlCommand("SELECT Animal, Nombre, Color FROM mascotas WHERE Animal = @animal", conexion);
+            consulta.Parameters.AddWithValue("@animal", animal);
+            MySqlDataReader resultado = consulta.ExecuteReader();
+            DataTable mascotas = new DataTable();
+            mascotas.Load(resultado);
+            conexion.Close();
+            return mascotas;
+        }
+
+        public DataTable buscaMascotaPorColor(String color)
+        {
+            conexion.Open();
+            MySqlCommand consulta = new MySqlCommand("SELECT Animal, Nombre, Color FROM mascotas WHERE Color = @color", conexion);
+            consulta.Parameters.AddWithValue("@color", color);
+            MySqlDataReader resultado = consulta.ExecuteReader();
+            DataTable mascotas = new DataTable();
+            mascotas.Load(resultado);
+            conexion.Close();
+            return mascotas;
+        }
 
     }
 }

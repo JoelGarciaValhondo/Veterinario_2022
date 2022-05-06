@@ -53,6 +53,20 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tipoMascota = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxNombreUsuario = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxNombreMascota = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBoxAnimalMascota = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBoxColorMascota = new System.Windows.Forms.TextBox();
+            this.botonBuscarUsuario = new System.Windows.Forms.Button();
+            this.botonBuscarPorNombre = new System.Windows.Forms.Button();
+            this.botonBuscarPorAnimal = new System.Windows.Forms.Button();
+            this.botonBuscarPorColor = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -72,6 +86,20 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.botonBuscarPorColor);
+            this.tabPage2.Controls.Add(this.botonBuscarPorAnimal);
+            this.tabPage2.Controls.Add(this.botonBuscarPorNombre);
+            this.tabPage2.Controls.Add(this.botonBuscarUsuario);
+            this.tabPage2.Controls.Add(this.label16);
+            this.tabPage2.Controls.Add(this.textBoxColorMascota);
+            this.tabPage2.Controls.Add(this.label15);
+            this.tabPage2.Controls.Add(this.textBoxAnimalMascota);
+            this.tabPage2.Controls.Add(this.label14);
+            this.tabPage2.Controls.Add(this.textBoxNombreMascota);
+            this.tabPage2.Controls.Add(this.label13);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.textBoxNombreUsuario);
+            this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.textoBuscador);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -126,12 +154,13 @@
             // insertaUsuario
             // 
             this.insertaUsuario.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.insertaUsuario.Location = new System.Drawing.Point(193, 419);
+            this.insertaUsuario.Location = new System.Drawing.Point(192, 419);
             this.insertaUsuario.Name = "insertaUsuario";
             this.insertaUsuario.Size = new System.Drawing.Size(170, 56);
             this.insertaUsuario.TabIndex = 46;
             this.insertaUsuario.Text = "Inserta Usuario";
             this.insertaUsuario.UseVisualStyleBackColor = true;
+            this.insertaUsuario.Click += new System.EventHandler(this.insertaUsuario_Click_1);
             // 
             // textBoxEmail
             // 
@@ -222,7 +251,7 @@
             // 
             this.textoBuscador.AutoSize = true;
             this.textoBuscador.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoBuscador.Location = new System.Drawing.Point(374, 50);
+            this.textoBuscador.Location = new System.Drawing.Point(290, 51);
             this.textoBuscador.Name = "textoBuscador";
             this.textoBuscador.Size = new System.Drawing.Size(241, 60);
             this.textoBuscador.TabIndex = 0;
@@ -300,6 +329,130 @@
             this.label12.TabIndex = 48;
             this.label12.Text = "Tipo Animal";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(136, 175);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 24);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Usuarios";
+            // 
+            // textBoxNombreUsuario
+            // 
+            this.textBoxNombreUsuario.Location = new System.Drawing.Point(127, 270);
+            this.textBoxNombreUsuario.Name = "textBoxNombreUsuario";
+            this.textBoxNombreUsuario.Size = new System.Drawing.Size(100, 22);
+            this.textBoxNombreUsuario.TabIndex = 2;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(45, 276);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 16);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Nombre";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(637, 175);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(97, 24);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Mascotas";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(552, 276);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(63, 16);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "Nombre";
+            // 
+            // textBoxNombreMascota
+            // 
+            this.textBoxNombreMascota.Location = new System.Drawing.Point(634, 270);
+            this.textBoxNombreMascota.Name = "textBoxNombreMascota";
+            this.textBoxNombreMascota.Size = new System.Drawing.Size(100, 22);
+            this.textBoxNombreMascota.TabIndex = 5;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(552, 360);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(55, 16);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "Animal";
+            // 
+            // textBoxAnimalMascota
+            // 
+            this.textBoxAnimalMascota.Location = new System.Drawing.Point(634, 354);
+            this.textBoxAnimalMascota.Name = "textBoxAnimalMascota";
+            this.textBoxAnimalMascota.Size = new System.Drawing.Size(100, 22);
+            this.textBoxAnimalMascota.TabIndex = 7;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(552, 445);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(45, 16);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "Color";
+            // 
+            // textBoxColorMascota
+            // 
+            this.textBoxColorMascota.Location = new System.Drawing.Point(634, 439);
+            this.textBoxColorMascota.Name = "textBoxColorMascota";
+            this.textBoxColorMascota.Size = new System.Drawing.Size(100, 22);
+            this.textBoxColorMascota.TabIndex = 9;
+            // 
+            // botonBuscarUsuario
+            // 
+            this.botonBuscarUsuario.Location = new System.Drawing.Point(127, 352);
+            this.botonBuscarUsuario.Name = "botonBuscarUsuario";
+            this.botonBuscarUsuario.Size = new System.Drawing.Size(100, 68);
+            this.botonBuscarUsuario.TabIndex = 11;
+            this.botonBuscarUsuario.Text = "Buscar Usuario";
+            this.botonBuscarUsuario.UseVisualStyleBackColor = true;
+            this.botonBuscarUsuario.Click += new System.EventHandler(this.botonBuscarUsuario_Click);
+            // 
+            // botonBuscarPorNombre
+            // 
+            this.botonBuscarPorNombre.Location = new System.Drawing.Point(823, 247);
+            this.botonBuscarPorNombre.Name = "botonBuscarPorNombre";
+            this.botonBuscarPorNombre.Size = new System.Drawing.Size(100, 62);
+            this.botonBuscarPorNombre.TabIndex = 12;
+            this.botonBuscarPorNombre.Text = "Buscar Por Nombre";
+            this.botonBuscarPorNombre.UseVisualStyleBackColor = true;
+            this.botonBuscarPorNombre.Click += new System.EventHandler(this.botonBuscarPorNombre_Click);
+            // 
+            // botonBuscarPorAnimal
+            // 
+            this.botonBuscarPorAnimal.Location = new System.Drawing.Point(823, 334);
+            this.botonBuscarPorAnimal.Name = "botonBuscarPorAnimal";
+            this.botonBuscarPorAnimal.Size = new System.Drawing.Size(100, 62);
+            this.botonBuscarPorAnimal.TabIndex = 13;
+            this.botonBuscarPorAnimal.Text = "Buscar Por Animal";
+            this.botonBuscarPorAnimal.UseVisualStyleBackColor = true;
+            this.botonBuscarPorAnimal.Click += new System.EventHandler(this.botonBuscarPorAnimal_Click);
+            // 
+            // botonBuscarPorColor
+            // 
+            this.botonBuscarPorColor.Location = new System.Drawing.Point(823, 419);
+            this.botonBuscarPorColor.Name = "botonBuscarPorColor";
+            this.botonBuscarPorColor.Size = new System.Drawing.Size(100, 62);
+            this.botonBuscarPorColor.TabIndex = 14;
+            this.botonBuscarPorColor.Text = "Buscar Por Color";
+            this.botonBuscarPorColor.UseVisualStyleBackColor = true;
+            this.botonBuscarPorColor.Click += new System.EventHandler(this.botonBuscarPorColor_Click);
+            // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,6 +500,20 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tipoMascota;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxNombreMascota;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBoxNombreUsuario;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button botonBuscarPorColor;
+        private System.Windows.Forms.Button botonBuscarPorAnimal;
+        private System.Windows.Forms.Button botonBuscarPorNombre;
+        private System.Windows.Forms.Button botonBuscarUsuario;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBoxColorMascota;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBoxAnimalMascota;
     }
 }
 

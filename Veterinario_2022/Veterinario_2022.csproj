@@ -93,6 +93,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="ResultadosAnimales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultadosAnimales.Designer.cs">
+      <DependentUpon>ResultadosAnimales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResultadosUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultadosUsuario.Designer.cs">
+      <DependentUpon>ResultadosUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,12 @@
     <Compile Include="VentanaLogin.Designer.cs">
       <DependentUpon>VentanaLogin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ResultadosAnimales.resx">
+      <DependentUpon>ResultadosAnimales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultadosUsuario.resx">
+      <DependentUpon>ResultadosUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
