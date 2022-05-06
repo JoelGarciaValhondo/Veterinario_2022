@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultadosAnimales));
             this.resultadoAnimales = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // resultadoAnimales
             // 
-            this.resultadoAnimales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resultadoAnimales.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultadoAnimales.Location = new System.Drawing.Point(13, 13);
             this.resultadoAnimales.Name = "resultadoAnimales";
             this.resultadoAnimales.Size = new System.Drawing.Size(426, 340);
             this.resultadoAnimales.TabIndex = 0;
+            this.resultadoAnimales.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.resultadoAnimales.Click += new System.EventHandler(this.label1_Click);
             // 
             // ResultadosAnimales
@@ -46,6 +48,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 362);
             this.Controls.Add(this.resultadoAnimales);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ResultadosAnimales";
             this.Text = "RespuestasAnimales";
             this.ResumeLayout(false);
