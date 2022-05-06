@@ -16,6 +16,7 @@ namespace Veterinario_2022
         public VentanaLogin()
         {
             InitializeComponent();
+
         }
 
         private void nombreUsuario_Click(object sender, EventArgs e)
@@ -39,5 +40,9 @@ namespace Veterinario_2022
             }  
         }
 
+        private void textoPassword_TextChanged(object sender, EventArgs e)
+        {
+            textoPassword.UseSystemPasswordChar = true;
+        }
     }
 }

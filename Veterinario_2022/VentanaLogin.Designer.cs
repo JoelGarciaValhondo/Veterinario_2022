@@ -65,6 +65,7 @@
             this.textoPassword.Name = "textoPassword";
             this.textoPassword.Size = new System.Drawing.Size(163, 20);
             this.textoPassword.TabIndex = 3;
+            this.textoPassword.TextChanged += new System.EventHandler(this.textoPassword_TextChanged);
             // 
             // password
             // 
